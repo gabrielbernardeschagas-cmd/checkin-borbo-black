@@ -7,8 +7,8 @@
 <meta name="description" content="Check-in obrigatório para alunas do Clube da Borboleta: Black Antecipada dia 05/11 às 20h, ao vivo, com sorteio de um iPhone.">
 <meta property="og:title" content="Check-in VIP | BorbôBlack Vitalícia">
 <meta property="og:description" content="Alunas do Clube da Borboleta: faça o check-in, gere seu post e concorra a um iPhone ao vivo no dia 05/11 às 20h.">
-<meta property="og:image" content="assets/fabiola-nina.jpg">
-<link rel="icon" href="assets/logo.png">
+<meta property="og:image" content="https://uzsbtzfmctrhgsmjugkm.supabase.co/storage/v1/object/public/borbo-checkin/assets/fabiola-nina.jpg">
+<link rel="icon" href="https://uzsbtzfmctrhgsmjugkm.supabase.co/storage/v1/object/public/borbo-checkin/assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -84,7 +84,7 @@ input:focus{outline:2px solid var(--laranja);border-color:var(--laranja)}
 
 <div class="tarja">Exclusivo para <span>alunas de qualquer produto do Clube da Borboleta</span></div>
 
-<header><img src="assets/logo.png" alt="Borbô Black Vitalícia"></header>
+<header><img src="https://uzsbtzfmctrhgsmjugkm.supabase.co/storage/v1/object/public/borbo-checkin/assets/logo.png" alt="Borbô Black Vitalícia"></header>
 
 <main class="wrap">
 <div class="hero">
@@ -96,7 +96,7 @@ input:focus{outline:2px solid var(--laranja);border-color:var(--laranja)}
     <div class="data"><b>05/11</b><span>às 20h<br>ao vivo</span></div>
     <br><a class="btn" href="#checkin" data-abrir>Fazer check-in e gerar meu post</a>
   </div>
-  <div class="foto"><img src="assets/fabiola-nina.jpg" alt="Fabíola e Nina — Borbô Black Vitalícia"></div>
+  <div class="foto"><img src="https://uzsbtzfmctrhgsmjugkm.supabase.co/storage/v1/object/public/borbo-checkin/assets/fabiola-nina.jpg" alt="Fabíola e Nina — Borbô Black Vitalícia"></div>
 </div>
 
 <section id="regras">
@@ -233,7 +233,7 @@ const LARANJA="#fd8222";
 let logoImg=null;
 async function desenharPost(canvas,{nome,numero,foto,instagram}){
   await document.fonts.load('80px "Archivo Black"'); await document.fonts.load('800 40px Outfit');
-  if(!logoImg) logoImg=await carregarImagem("assets/logo.png");
+  if(!logoImg) logoImg=await carregarImagem("https://uzsbtzfmctrhgsmjugkm.supabase.co/storage/v1/object/public/borbo-checkin/assets/logo.png");
   const c=canvas.getContext("2d"), W=1080, H=1350;
   c.fillStyle="#000"; c.fillRect(0,0,W,H);
   // brilho laranja sutil
@@ -271,7 +271,7 @@ function arred(c,x,y,w,h,r,cor){c.fillStyle=cor;c.beginPath();c.roundRect(x,y,w,
 
 // mockup da seção 2 (exemplo)
 (async()=>{try{
-  const ex=await carregarImagem("assets/fabiola-nina.jpg");
+  const ex=await carregarImagem("https://uzsbtzfmctrhgsmjugkm.supabase.co/storage/v1/object/public/borbo-checkin/assets/fabiola-nina.jpg");
   await desenharPost($("#mock"),{nome:"Seu nome aqui",numero:"7431",foto:ex,instagram:"seuperfil"});
 }catch(e){console.warn(e)}})();
 </script>
