@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check-in VIP | BorbôBlack Vitalícia</title>
+<meta name="description" content="Check-in obrigatório para alunas do Clube da Borboleta: Black Antecipada dia 05/11 às 20h, ao vivo, com sorteio de um iPhone.">
+<meta property="og:title" content="Check-in VIP | BorbôBlack Vitalícia">
+<meta property="og:description" content="Alunas do Clube da Borboleta: faça o check-in, gere seu post e concorra a um iPhone ao vivo no dia 05/11 às 20h.">
+<meta property="og:image" content="assets/fabiola-nina.jpg">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--laranja:#fd8222;--preto:#000;--cinza:#151515;--branco:#fff;--vermelho:#d3232a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--preto);color:var(--branco);font-family:Outfit,system-ui,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.titulo{font-family:"Archivo Black",Outfit,sans-serif;text-transform:uppercase;line-height:1.05;letter-spacing:-.01em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.tarja{background:var(--vermelho);text-align:center;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:13px;padding:10px 16px}
+.tarja span{opacity:.85;font-weight:600;text-transform:none;letter-spacing:0}
+header{padding:28px 0 8px;text-align:center}
+header img{width:min(320px,70vw)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:24px 0 56px}
+.hero .foto{border:4px solid var(--laranja);border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(253,130,34,.18)}
+.hero .foto img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.eyebrow{display:inline-block;background:var(--laranja);color:#000;font-weight:800;text-transform:uppercase;padding:6px 12px;border-radius:6px;font-size:13px;letter-spacing:.04em;margin-bottom:16px}
+h1{font-size:clamp(30px,5vw,52px);margin-bottom:18px}
+h1 em{font-style:normal;color:var(--laranja)}
+.hero p{font-size:18px;margin-bottom:14px;color:#e8e8e8}
+.hero p strong{color:#fff}
+.data{display:inline-flex;align-items:center;gap:14px;background:var(--laranja);color:#000;border-radius:14px;padding:12px 20px;margin:8px 0 22px}
+.data b{font-family:"Archivo Black";font-size:40px;line-height:1}
+.data span{font-weight:800;text-transform:uppercase;font-size:14px;line-height:1.15}
+.btn{display:inline-block;background:var(--laranja);color:#000;font-weight:800;text-transform:uppercase;font-size:17px;padding:18px 28px;border-radius:12px;border:0;cursor:pointer;text-decoration:none;letter-spacing:.02em;transition:transform .12s,filter .12s;font-family:Outfit}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn.sec{background:transparent;color:var(--laranja);border:2px solid var(--laranja)}
+.btn[disabled]{opacity:.5;cursor:wait;transform:none}
+section{padding:56px 0;border-top:1px solid #1f1f1f}
+h2{font-size:clamp(24px,3.6vw,38px);margin-bottom:20px}
+h2 em{font-style:normal;color:var(--laranja)}
+.regras{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.card{background:var(--cinza);border:1px solid #262626;border-radius:16px;padding:24px}
+.card .n{font-family:"Archivo Black";color:var(--laranja);font-size:34px;line-height:1;margin-bottom:12px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{color:#cfcfcf;font-size:15px}
+.checks{list-style:none;margin:22px 0;display:grid;gap:10px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-size:18px}
+.checks li::before{content:"✔";color:var(--laranja);font-weight:800;flex:none}
+.centro{text-align:center}
+.mock{margin:32px auto 0;max-width:420px;border-radius:18px;overflow:hidden;border:1px solid #2a2a2a;background:#0b0b0b}
+.mock canvas,.mock img{width:100%;display:block}
+footer{padding:36px 0;text-align:center;color:#777;font-size:13px;border-top:1px solid #1f1f1f}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.86);display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:24px 14px;z-index:50}
+.modal.aberto{display:flex}
+.painel{background:#0e0e0e;border:1px solid #2a2a2a;border-radius:20px;width:100%;max-width:560px;padding:28px 24px;position:relative}
+.fechar{position:absolute;right:14px;top:10px;background:none;border:0;color:#888;font-size:30px;cursor:pointer}
+.painel h2{font-size:24px;margin-bottom:6px}
+.painel .sub{color:#bbb;margin-bottom:20px;font-size:15px}
+label{display:block;font-weight:600;font-size:14px;margin:14px 0 6px;color:#ddd}
+input[type=text],input[type=email],input[type=tel]{width:100%;background:#161616;border:1px solid #333;color:#fff;border-radius:10px;padding:14px;font-size:16px;font-family:Outfit}
+input:focus{outline:2px solid var(--laranja);border-color:var(--laranja)}
+.foto-in{display:flex;align-items:center;gap:16px;background:#161616;border:1px dashed #444;border-radius:12px;padding:14px;cursor:pointer}
+.foto-in img{width:72px;height:72px;border-radius:50%;object-fit:cover;background:#222;border:3px solid var(--laranja)}
+.foto-in span{font-size:14px;color:#bbb}
+.foto-in input{display:none}
+.confirma{display:flex;gap:12px;align-items:flex-start;margin:20px 0 6px;background:#161616;border:1px solid #333;border-radius:12px;padding:14px;font-size:15px}
+.confirma input{width:22px;height:22px;flex:none;accent-color:var(--laranja);margin-top:2px}
+.erro{color:#ff6b6b;font-size:14px;margin-top:10px;min-height:20px}
+.painel .btn{width:100%;margin-top:16px}
+/* resultado */
+.res{display:none;text-align:center}
+.res.aberto{display:block}
+.res .numero{font-family:"Archivo Black";font-size:64px;color:var(--laranja);line-height:1}
+.res canvas{width:100%;max-width:400px;border-radius:14px;margin:18px auto;display:block;border:1px solid #2a2a2a}
+.res .acoes{display:grid;gap:10px}
+.res .aviso{background:#1a1a1a;border-left:4px solid var(--laranja);padding:12px 14px;text-align:left;font-size:14px;color:#ddd;border-radius:8px;margin-top:16px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.hero .foto{order:-1;max-width:420px;margin:0 auto}.regras{grid-template-columns:1fr}.data b{font-size:32px}}
+</style>
+</head>
+<body>
+
+<div class="tarja">Exclusivo para <span>alunas de qualquer produto do Clube da Borboleta</span></div>
+
+<header><img src="assets/logo.png" alt="Borbô Black Vitalícia"></header>
+
+<main class="wrap">
+<div class="hero">
+  <div>
+    <span class="eyebrow">Check-in VIP</span>
+    <h1>Se você é aluna de qualquer produto nosso, esse <em>check-in é obrigatório.</em></h1>
+    <p>Dia <strong>05/11 às 20h</strong> vai acontecer a <strong>Black Antecipada para alunas</strong> com condições <strong>AINDA MAIS especiais e exclusivas!</strong></p>
+    <p><strong>Além disso, vamos sortear um iPhone AO VIVO!</strong></p>
+    <div class="data"><b>05/11</b><span>às 20h<br>ao vivo</span></div>
+    <br><a class="btn" href="#checkin" data-abrir>Fazer check-in e gerar meu post</a>
+  </div>
+  <div class="foto"><img src="assets/fabiola-nina.jpg" alt="Fabíola e Nina — Borbô Black Vitalícia"></div>
+</div>
+
+<section id="regras">
+  <h2>Atenção às <em>regras:</em></h2>
+  <p style="font-size:18px;max-width:760px">Você precisa estar <strong>ao vivo às 20h</strong> com a gente até o momento do sorteio e <strong>com o número da sorte em mãos</strong> para concorrer.</p>
+  <div class="regras">
+    <div class="card"><div class="n">1</div><h3>Como gerar o número da sorte?</h3><p>O número da sorte é gerado junto com o seu post. Faça o post até o dia da aula (05/11) às 19h.</p></div>
+    <div class="card"><div class="n">2</div><h3>Só 1 número por aluna</h3><p>Você só poderá gerar um único número da sorte. Se tentar de novo, o sistema devolve o mesmo número.</p></div>
+    <div class="card"><div class="n">3</div><h3>O post valida sua participação</h3><p>É importante que você faça o post para validar sua participação no sorteio. Vamos checar ao vivo se você postou.</p></div>
+  </div>
+</section>
+
+<section id="checkin" class="centro">
+  <h2>Agora é com você: toque no botão e <em>confirme sua presença</em> gerando sua postagem</h2>
+  <a class="btn" href="#checkin" data-abrir>Fazer check-in na aula e gerar o post</a>
+  <ul class="checks" style="max-width:520px;margin:28px auto;text-align:left">
+    <li>Fez check-in</li>
+    <li>Gerou o post e postou</li>
+    <li>É só estar ao vivo com a gente no dia 05 de novembro às 20h!</li>
+  </ul>
+  <div class="mock"><canvas id="mock" width="1080" height="1350"></canvas></div>
+</section>
+
+<section id="grupo" class="centro">
+  <h2>Entre no grupo de alunas para receber o <em>aviso do encontro ao vivo</em></h2>
+  <a class="btn sec" id="btnGrupo" href="#" target="_blank" rel="noopener">Entrar no grupo</a>
+</section>
+</main>
+
+<footer>Borbô Black Vitalícia · Clube da Borboleta · Black das Alunas 05/11 às 20h</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="painel">
+    <button class="fechar" data-fechar aria-label="Fechar">×</button>
+    <form id="form" novalidate>
+      <h2>Check-in <span style="color:var(--laranja)">VIP</span></h2>
+      <p class="sub">Preencha com os dados da sua compra. Você só pode gerar um número da sorte.</p>
+      <label class="foto-in" for="foto">
+        <img id="prev" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Ccircle cx='36' cy='28' r='13' fill='%23444'/%3E%3Cpath d='M12 66c3-15 12-22 24-22s21 7 24 22z' fill='%23444'/%3E%3C/svg%3E">
+        <span><strong style="color:#fff">Sua foto</strong><br>Toque para escolher (vai aparecer no post)</span>
+        <input type="file" id="foto" name="foto" accept="image/*">
+      </label>
+      <label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Como quer aparecer no post">
+      <label for="email">E-mail de compra do produto</label><input type="email" id="email" name="email" autocomplete="email" required placeholder="o mesmo e-mail da compra">
+      <label for="whatsapp">WhatsApp</label><input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" required placeholder="(11) 99999-9999">
+      <label for="instagram">Instagram</label><input type="text" id="instagram" name="instagram" required placeholder="@seuperfil">
+      <label class="confirma"><input type="checkbox" id="confirmou" name="confirmou" value="1"><span>Confirmo que estarei presente na Black para Alunas dia <strong>05/11 às 20h</strong>.</span></label>
+      <div class="erro" id="erro"></div>
+      <button class="btn" type="submit" id="enviar">Gerar meu número da sorte</button>
+    </form>
+
+    <div class="res" id="res">
+      <h2 id="resTitulo">Check-in feito!</h2>
+      <p class="sub" id="resSub">Seu número da sorte:</p>
+      <div class="numero" id="resNumero">0000</div>
+      <canvas id="post" width="1080" height="1350"></canvas>
+      <div class="acoes">
+        <button class="btn" id="baixar">Baixar o post</button>
+        <button class="btn sec" id="compartilhar" style="display:none">Compartilhar / postar agora</button>
+      </div>
+      <div class="aviso"><strong>Agora poste no seu feed</strong> e marque o Clube da Borboleta. Vamos checar ao vivo se você postou. Guarde seu número: ele não muda.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== CONFIG =====
+const FUNCAO = "https://uzsbtzfmctrhgsmjugkm.supabase.co/functions/v1/checkin-borbo";
+const GRUPO_URL = "";            // link do grupo de alunas (WhatsApp) — vazio = botão desativado
+const MARCAR = "@clubedaborboleta"; // handle que aparece no post (ajustar)
+// ==================
+
+const $ = s => document.querySelector(s);
+const btnGrupo = $("#btnGrupo");
+if (GRUPO_URL) btnGrupo.href = GRUPO_URL; else { btnGrupo.setAttribute("disabled",""); btnGrupo.style.opacity=".45"; btnGrupo.addEventListener("click",e=>e.preventDefault()); }
+
+document.querySelectorAll("[data-abrir]").forEach(b=>b.addEventListener("click",e=>{e.preventDefault();$("#modal").classList.add("aberto");document.body.style.overflow="hidden";}));
+document.querySelectorAll("[data-fechar]").forEach(b=>b.addEventListener("click",()=>{$("#modal").classList.remove("aberto");document.body.style.overflow="";}));
+
+// máscara de WhatsApp
+$("#whatsapp").addEventListener("input",e=>{let d=e.target.value.replace(/\D/g,"").slice(0,11);let s=d;if(d.length>2)s="("+d.slice(0,2)+") "+d.slice(2);if(d.length>7)s="("+d.slice(0,2)+") "+d.slice(2,7)+"-"+d.slice(7);e.target.value=s;});
+
+// foto: recorta em quadrado 900px antes de enviar
+let fotoBlob=null, fotoImg=null;
+$("#foto").addEventListener("change",async e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const img=await carregarImagem(URL.createObjectURL(f));
+  const c=document.createElement("canvas"); c.width=c.height=900;
+  const s=Math.min(img.width,img.height); const sx=(img.width-s)/2, sy=(img.height-s)/2;
+  c.getContext("2d").drawImage(img,sx,sy,s,s,0,0,900,900);
+  fotoBlob=await new Promise(r=>c.toBlob(r,"image/jpeg",.88));
+  fotoImg=img; $("#prev").src=c.toDataURL("image/jpeg",.7);
+});
+function carregarImagem(src){return new Promise((ok,err)=>{const i=new Image();i.crossOrigin="anonymous";i.onload=()=>ok(i);i.onerror=err;i.src=src;});}
+
+// envio
+$("#form").addEventListener("submit",async e=>{
+  e.preventDefault(); const erro=$("#erro"); erro.textContent="";
+  const nome=$("#nome").value.trim(), email=$("#email").value.trim(), wa=$("#whatsapp").value, ig=$("#instagram").value.trim();
+  if(!fotoBlob) return erro.textContent="Escolha uma foto sua.";
+  if(nome.length<3) return erro.textContent="Informe seu nome.";
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return erro.textContent="E-mail inválido.";
+  if(wa.replace(/\D/g,"").length<10) return erro.textContent="WhatsApp incompleto.";
+  if(!ig) return erro.textContent="Informe seu Instagram.";
+  if(!$("#confirmou").checked) return erro.textContent="Confirme sua presença no dia 05/11 às 20h.";
+  const fd=new FormData(); fd.append("nome",nome); fd.append("email",email); fd.append("whatsapp",wa); fd.append("instagram",ig); fd.append("confirmou","1");
+  fd.append("foto",fotoBlob,"foto.jpg"); fd.append("utm",JSON.stringify(Object.fromEntries(new URLSearchParams(location.search))));
+  const btn=$("#enviar"); btn.disabled=true; btn.textContent="Gerando...";
+  try{
+    const r=await fetch(FUNCAO,{method:"POST",body:fd}); const j=await r.json();
+    if(!r.ok||j.erro) throw new Error(j.erro||"Falha ao enviar.");
+    await mostrarResultado(j);
+  }catch(ex){ erro.textContent=ex.message; }
+  finally{ btn.disabled=false; btn.textContent="Gerar meu número da sorte"; }
+});
+
+let postBlob=null;
+async function mostrarResultado(j){
+  $("#form").style.display="none"; $("#res").classList.add("aberto");
+  $("#resNumero").textContent=String(j.numero_sorte);
+  if(j.ja_existe){ $("#resTitulo").textContent="Você já fez check-in"; $("#resSub").textContent="Seu número da sorte continua o mesmo:"; }
+  const img = fotoImg && !j.ja_existe ? fotoImg : await carregarImagem(j.foto_url);
+  await desenharPost($("#post"), {nome:j.nome, numero:j.numero_sorte, foto:img, instagram:j.instagram});
+  postBlob=await new Promise(r=>$("#post").toBlob(r,"image/png"));
+  const arquivo=new File([postBlob],"check-in-borbo-black.png",{type:"image/png"});
+  if(navigator.canShare && navigator.canShare({files:[arquivo]})){ const b=$("#compartilhar"); b.style.display="block"; b.onclick=()=>navigator.share({files:[arquivo],title:"Check-in VIP Borbô Black"}).catch(()=>{}); }
+  $("#baixar").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(postBlob);a.download="check-in-borbo-black.png";a.click();};
+  try{ if(window.fbq) fbq("track","CompleteRegistration"); }catch(_){}
+}
+
+// ===== DESENHO DO POST (1080x1350) =====
+const LARANJA="#fd8222";
+let logoImg=null;
+async function desenharPost(canvas,{nome,numero,foto,instagram}){
+  await document.fonts.load('80px "Archivo Black"'); await document.fonts.load('800 40px Outfit');
+  if(!logoImg) logoImg=await carregarImagem("assets/logo.png");
+  const c=canvas.getContext("2d"), W=1080, H=1350;
+  c.fillStyle="#000"; c.fillRect(0,0,W,H);
+  // brilho laranja sutil
+  const g=c.createRadialGradient(W/2,560,50,W/2,560,620); g.addColorStop(0,"rgba(253,130,34,.22)"); g.addColorStop(1,"rgba(0,0,0,0)"); c.fillStyle=g; c.fillRect(0,0,W,H);
+  // logo
+  const lw=460, lh=lw*logoImg.height/logoImg.width; c.drawImage(logoImg,(W-lw)/2,54,lw,lh);
+  // selo
+  selo(c, W/2, 54+lh+34, "EU VOU  ·  CHECK-IN VIP");
+  // foto circular com anel
+  const cy=600, r=210;
+  c.save(); c.beginPath(); c.arc(W/2,cy,r+12,0,Math.PI*2); c.fillStyle=LARANJA; c.fill(); c.restore();
+  c.save(); c.beginPath(); c.arc(W/2,cy,r,0,Math.PI*2); c.clip();
+  const s=Math.min(foto.width,foto.height); c.drawImage(foto,(foto.width-s)/2,(foto.height-s)/2,s,s,W/2-r,cy-r,r*2,r*2); c.restore();
+  // nome
+  c.textAlign="center"; c.fillStyle="#fff";
+  const nomeUp=nome.toUpperCase(); let fs=64; c.font=`${fs}px "Archivo Black"`;
+  while(c.measureText(nomeUp).width>W-140 && fs>34){fs-=3;c.font=`${fs}px "Archivo Black"`;}
+  c.fillText(nomeUp,W/2,cy+r+96);
+  if(instagram){ c.font='600 30px Outfit'; c.fillStyle=LARANJA; c.fillText("@"+instagram,W/2,cy+r+140); }
+  // confirmada
+  c.fillStyle="#fff"; c.font='800 34px Outfit'; c.fillText("ALUNA CONFIRMADA",W/2,cy+r+215);
+  c.fillStyle="#cfcfcf"; c.font='400 30px Outfit'; c.fillText("na Black das Alunas do Clube da Borboleta",W/2,cy+r+258);
+  // bloco data + número
+  const by=cy+r+300, bh=180; arred(c,90,by,W-180,bh,22,LARANJA);
+  c.fillStyle="#000"; c.textAlign="left";
+  c.font='80px "Archivo Black"'; c.fillText("05/11",130,by+112);
+  c.font='800 30px Outfit'; c.fillText("ÀS 20H · AO VIVO",380,by+78);
+  c.font='600 26px Outfit'; c.fillText("Número da sorte",380,by+118);
+  c.textAlign="right"; c.font='96px "Archivo Black"'; c.fillText(String(numero),W-130,by+126);
+  // rodapé
+  c.textAlign="center"; c.fillStyle="#fff"; c.font='600 30px Outfit'; c.fillText("Concorrendo a um iPhone novinho 🍀",W/2,H-56);
+}
+function selo(c,x,y,txt){c.font='800 26px Outfit';const w=c.measureText(txt).width+64;arred(c,x-w/2,y,w,56,28,LARANJA);c.fillStyle="#000";c.textAlign="center";c.fillText(txt,x,y+38);}
+function arred(c,x,y,w,h,r,cor){c.fillStyle=cor;c.beginPath();c.roundRect(x,y,w,h,r);c.fill();}
+
+// mockup da seção 2 (exemplo)
+(async()=>{try{
+  const ex=await carregarImagem("assets/fabiola-nina.jpg");
+  await desenharPost($("#mock"),{nome:"Seu nome aqui",numero:"7431",foto:ex,instagram:"seuperfil"});
+}catch(e){console.warn(e)}})();
+</script>
+</body>
+</html>
