@@ -257,14 +257,14 @@ async function desenharPost(canvas,{nome,numero,foto,instagram}){
   c.fillStyle="#fff"; c.font='800 34px Outfit'; c.fillText("ALUNA CONFIRMADA",W/2,cy+r+215);
   c.fillStyle="#cfcfcf"; c.font='400 30px Outfit'; c.fillText("na Black das Alunas do Clube da Borboleta",W/2,cy+r+258);
   // bloco data + número
-  const by=cy+r+300, bh=180; arred(c,90,by,W-180,bh,22,LARANJA);
+  const by=cy+r+296, bh=170; arred(c,90,by,W-180,bh,22,LARANJA);
   c.fillStyle="#000"; c.textAlign="left";
-  c.font='80px "Archivo Black"'; c.fillText("05/11",130,by+112);
-  c.font='800 30px Outfit'; c.fillText("ÀS 20H · AO VIVO",380,by+78);
-  c.font='600 26px Outfit'; c.fillText("Número da sorte",380,by+118);
-  c.textAlign="right"; c.font='96px "Archivo Black"'; c.fillText(String(numero),W-130,by+126);
-  // rodapé
-  c.textAlign="center"; c.fillStyle="#fff"; c.font='600 30px Outfit'; c.fillText("Concorrendo a um iPhone novinho 🍀",W/2,H-56);
+  c.font='78px "Archivo Black"'; c.fillText("05/11",128,by+110);
+  c.font='800 28px Outfit'; c.fillText("ÀS 20H · AO VIVO",372,by+74);
+  c.font='600 25px Outfit'; c.fillText("Número da sorte",372,by+114);
+  c.textAlign="right"; c.font='92px "Archivo Black"'; c.fillText(String(numero),W-128,by+120);
+  // rodapé (abaixo do bloco, sem sobrepor)
+  c.textAlign="center"; c.fillStyle="#fff"; c.font='600 30px Outfit'; c.fillText("Concorrendo a um iPhone novinho 🍀",W/2,by+bh+58);
 }
 function selo(c,x,y,txt){c.font='800 26px Outfit';const w=c.measureText(txt).width+64;arred(c,x-w/2,y,w,56,28,LARANJA);c.fillStyle="#000";c.textAlign="center";c.fillText(txt,x,y+38);}
 function arred(c,x,y,w,h,r,cor){c.fillStyle=cor;c.beginPath();c.roundRect(x,y,w,h,r);c.fill();}
